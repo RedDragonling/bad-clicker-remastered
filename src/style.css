@@ -1,0 +1,168 @@
+:root {
+    --main-bg-color: #ffda90;
+    --sec-color: #e49f55;
+    --menu-color: #a4652b;
+    --dark-color: #633b16;
+    --font-color: #f5f4f0;
+    --level-up: #38d930;
+    --level-up-toggle: #2d9b48;
+}
+
+@font-face {
+    font-family: rainyHearts;
+    src: url(font/rainyhearts.ttf);
+}
+@font-face {
+    font-family: thirteenPixelFonts;
+    src: url(font/Thirteen-Pixel-Fonts.ttf);
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--main-bg-color);
+    background: linear-gradient(#e49f55,#ffda90);
+    font-family: 'rainyHearts';
+    font-weight: bold;
+}
+
+header {
+    background-color: var(--dark-color);
+    color: var(--font-color);
+    margin: 0 0 40px;
+    padding: 1em;
+    font-family: thirteenPixelFonts;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.value {
+    margin: 0.2em 1.5em;
+    color: var(--font-color);
+    text-shadow: 0 0 3px black;
+}
+
+#game-box {
+    height: 480px;
+    width: 720px;
+    background-color: red;
+    overflow: hidden;
+    box-shadow: 0 0 0 4px var(--dark-color) inset;
+    background-image: url(img/bgField.png);
+}
+
+.side-box {
+    width: 100px;
+    height: 480px;
+    background-color: var(--menu-color);
+    box-shadow: 0 0 0 4px var(--dark-color) inset;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.side-box::-webkit-scrollbar {
+    display: none;
+}
+
+.side-box-item {
+    height: 96px;
+    width: 96px;
+    box-shadow: 0 0 0 4px var(--dark-color) inset;
+    background-size: cover;
+}
+
+#cat {
+    height: 150px;
+    width: 150px;
+    position: sticky;
+    left: 285px;
+    top: 165px;
+    background-image: url(img/character1.png);
+    background-size: cover;
+    animation-name: catAnim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: 0.2s;
+}
+
+#cat:hover {
+    height: 160px;
+    width: 160px;
+    animation-duration: 6s;
+}
+
+#level-box {
+    background-color: #ffffff70;
+    box-shadow: 0 0 0 1px #ffffff70 inset;
+    color: var(--font-color);
+    text-shadow: 0 0 2px black;
+    height: 100px;
+    width: 200px;
+    position: sticky;
+    left: 260px;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#level-up {
+    width: 140px;
+    height: 50px;
+    position: sticky;
+    left: 290px;
+    top: 400px;
+    color: var(--font-color);
+}
+
+
+.level-up {
+    background-color: #ffffff70;
+    box-shadow: 0 0 0 4px #ffffff70 inset;
+    transition: 0.1s;
+    text-shadow: 0 0 2px black;
+}
+
+.level-up:hover {
+    background-color: #ffffff40;
+    box-shadow: 0 0 0 4px #ffffff40 inset;
+}
+.active-level-up {
+    background-color: var(--level-up);
+    box-shadow: 0 0 3px black;
+}
+.active-level-up:hover {
+    background-color: var(--level-up-toggle);
+    box-shadow: 0 0 3px black;
+}
+
+/*  */
+
+@keyframes catAnim {
+    0%{top: 165px;}
+    25%{top: 185px; rotate: 5deg;}
+    50%{top: 165px;}
+    75%{top: 185px; rotate: -5deg;}
+    100%{top: 165px;}
+}

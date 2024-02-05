@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <header class="flex center col">
+        <h1>Bad cat clicker 2!</h1>
+        <h3>Electrical bogaloo</h3>
+    </header>
+    <!--  -->
+    <main class="flex center">
+        <div class="side-box"></div>
+        <div id="game-box">
+          <div class="flex space-between value">
+            <h1>Coins: <span id="coin-amount">0</span></h1>
+            <h1><span id="click-per-second">0</span> CPS</h1>
+          </div>
+            <div id="level-box">
+                <h1 id="name">Catbert</h1>
+                <p>Level <span id="level">1</span></p>
+                <p>Until next evolution: <span id="next-level">9</span></p>
+            </div>
+            <div id="cat"></div>
+            <div id="level-up" class="flex center level-up"><h3>Level up!</h3></div>
+        </div>
+        <div class="side-box">
+            <div class="side-box-item" style="background-image: url(src/img/objectBlank.png);"></div>
+            <div class="side-box-item" style="background-image: url(src/img/objectBlank.png);"></div>
+            <div class="side-box-item" style="background-image: url(src/img/objectBlank.png);"></div>
+            <div class="side-box-item" style="background-image: url(src/img/objectBlank.png);"></div>
+        </div>
+    </main>
+    <!--  -->
+    <footer>
+        <p>Hello this is a footer</p>
+    </footer>
+    <!--  -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
