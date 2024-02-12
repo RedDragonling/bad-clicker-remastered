@@ -17,6 +17,8 @@ let points = 0;
 let level = 1;
 let levelCost = 100;
 
+let upgradeCostKibble = 10;
+
 // REMEMBER TO MATH ROUND UP TO AVOID DECIMALS
 
 console.log(points);
@@ -33,6 +35,14 @@ function updateLevelUpButton() {
     document.getElementById("level-up").classList.add('active-level-up');
   } else if (points <= levelCost) {
     document.getElementById("level-up").classList.remove('active-level-up')
+  }
+};
+
+function updateUpgradeButtonKibble() {
+  if (points >= upgradeCostKibble) {
+    document.getElementById("item-kibble").classList.remove('side-box-inactive');
+  } else if (points <= upgradeCostKibble) {
+    document.getElementById("item-kibble")?.classList.add('side-box-inactive');
   }
 };
 
@@ -63,6 +73,7 @@ function holdDownClick() {
   points = points + pointIncrement;
   elementCoin.innerHTML = points;
   updateLevelUpButton();
+  updateUpgradeButtonKibble();
 };
 
 let isMouseDown = false;
@@ -86,3 +97,10 @@ elementCat?.addEventListener('mouseleave', () =>{
   }
 });
 
+// yooo it ticks every second POG gotta remember the setInterval thing fr. ( setInterval(code, 1000ms) )
+// setInterval(()=>{console.log("second");}, 1000);
+
+// document.getElementById("test-button")?.addEventListener('click', () =>{
+//   setInterval(()=>{points = points + 1;
+//     elementCoin.innerHTML = points;}, 1000);
+// })

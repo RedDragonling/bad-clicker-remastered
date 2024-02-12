@@ -89,6 +89,16 @@ header {
     width: 96px;
     box-shadow: 0 0 0 4px var(--dark-color) inset;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.side-box-item p {
+    margin: 0.5em;
+    color: var(--font-color);
+    text-shadow: 0 0 2px black;
 }
 
 #cat {
@@ -155,6 +165,10 @@ header {
 .active-level-up:hover {
     background-color: var(--level-up-toggle);
     box-shadow: 0 0 3px black;
+}
+
+.side-box-inactive {
+    filter: grayscale(1);
 }
 
 /*  */
